@@ -10,5 +10,14 @@ body {
 
 .my_boolzapp-section{
     height: 95vh;
+    width: 70vw;
     background-color: crimson;
+}
+
+.my_left-side{
+    background-color: steelblue;
+}
+
+.my_right-side{
+    background-color: sandybrown;
 }
