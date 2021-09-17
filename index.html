@@ -25,45 +25,78 @@
     </section>
 
     <section class="my_boolzapp-section position-absolute top-50 start-50 translate-middle">
-        <div class="container">
-            <div class="row">
+        <div class="container-flex">
+            <div class="row g-0">
                 <div class="col-4">
                     <div class="my_left-side">
-                        <div>
-                            <h2>Nome utente</h1>
+                        <div class="my_user-section d-flex justify-content-between align-items-center p-3">
+                            <div class="my_user-info">
+                                <span>Img utente</span><span> Nome Utente</span>
+                            </div>
+                            <div class="my_user-icons">
+                                <span>icona uno</span>
+                                <span> icona due</span>
+                                <span> icona tre</span>
+                            </div>
                         </div>
-                        <div>
-                            <p> Ricevi notifiche </p>
+                        <div class="my_alerts-section d-flex align-items-center">
+                            <div class="my_alert-icon">
+                                <p>campanellina</p>
+                            </div>
+                            <div class="my_alert-text">
+                                <h5> Ricevi notifiche di nuovi messaggi </h5>
+                                <p>Attiva notifiche desktop</p>
+
+                            </div>
                         </div>
-                        <div>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <div class="my_search-section d-flex align-items-center">
+                            <div class="my_search-icon ms-2 ps-2 pe-2">
+                                <p>lente</p>
+                            </div>
+                            <input type="text" placeholder=" Cerca o inizia una nuova chat">
                         </div>
-                        <div>
+                        <div class="my_chats-section">
                             <ul>
-                                <li>Michele</li>
+                                <li>
+                                    <div class="my_chat-box d-flex justify-content-evenly">
+                                        <div class="my_chat-img">
+                                            <p>Img Michele</p>
+                                        </div>
+                                        <div class="my_chat-text">
+                                            <h4>Michele</h4>
+                                            <p>Tutto Fatto! ...</p>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-8">
-                    <div class="my_current-chat">
-                        <h2>Michele</h2>
-                        <p>ultimo accesso</p>
+                    <div class="my_right-side">
+                        <div class="my_current-chat d-flex p-3 align-items-center justify-content-between">
+                            <div class="my_current-img">
+                                <p>Immagine corrente</p>
+                            </div>
+                            <div class="my_current-info">
+                                <p>Michele</p>
+                                <p>ultimo accesso</p>
+                            </div>
+                            <div class="my_user-icons">
+                                <span>icona uno</span>
+                                <span> icona due</span>
+                                <span> icona tre</span>
+                            </div>
+                        </div>
+                        <div class="my_chat-section">
+                            <p>Zona della CHat</p>
+                        </div>
+                        <div class="my_form-section d-flex justify-content-between align-items-center">
+                            <p >smile</p>
+                            <input type="text" placeholder=" Scrivi un messaggio">
+                            <p>microfono</p>
+                        </div>
                     </div>
-                    <div class="my_chat-section">
-
-                    </div>
-                    <div class="my_form-section d-flex justify-content-evenly">
-                        <p>smile</p>
-                        <input type="text" placeholder="Scrivi un messaggio">
-                        <p>microfono</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-
-                    </div>
-
                 </div>
             </div>
         </div>
