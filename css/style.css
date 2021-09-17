@@ -65,11 +65,12 @@ ul {
 
 .my_search-section input {
     height: 30px;
-    width: 365px;
+    width: 91%;
     border: 1px solid #dbdbdb;
     border-left: none;
     border-start-end-radius: 3px;
     border-end-end-radius: 3px;
+    outline: none;
 }
 
 .my_form-section {
@@ -82,4 +83,5 @@ ul {
     width: 700px;
     border: none;
     border-radius: 5px;
+    outline: none;
 }
