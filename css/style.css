@@ -80,8 +80,14 @@ ul {
 
 .my_form-section input{
     height: 40px;
-    width: 700px;
+    width: 85%;
     border: none;
     border-radius: 5px;
     outline: none;
+}
+
+.my_user-img img{
+    height: 45px;
+    border-radius: 50%;
+    object-fit: contain;
 }
