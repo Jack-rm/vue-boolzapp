@@ -114,6 +114,15 @@ var root = new Vue (
                     ],
                 },
             ],
+            selectedContact: 0,
+        },
+
+        methods: {
+            
+            selectContact : function(elementIndex) {
+                this.selectedContact = elementIndex;
+            }
         }
     }
 );
+

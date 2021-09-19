@@ -25,10 +25,12 @@
     </section>
 
     <section class="my_boolzapp-section position-absolute top-50 start-50 translate-middle">
-        <div class="container-flex" id="root">
+        <div class="container-flex h-100" id="root">
             <div class="row g-0">
+
                 <div class="col-4">
-                    <div class="my_left-side">
+                    <div class="my_left-side d-flex flex-column justify-content-between">
+
                         <div class="my_user-section d-flex justify-content-between align-items-center p-3">
                             <div class="my_user-info d-flex align-items-center">
                                 <div class="my_user-img">
@@ -42,6 +44,8 @@
                                 <span><i class="fas fa-ellipsis-v"></i></span>
                             </div>
                         </div>
+
+
                         <div class="my_alerts-section d-flex align-items-center">
                             <div class="my_alert-icon">
                                 <i class="fas fa-bell-slash"></i>
@@ -49,42 +53,50 @@
                             <div class="my_alert-text">
                                 <h5> Ricevi notifiche di nuovi messaggi </h5>
                                 <p>Attiva notifiche desktop</p>
-
                             </div>
                         </div>
+
+
                         <div class="my_search-section d-flex align-items-center">
                             <div class="my_search-icon ms-2 ps-2 pe-2">
-                                <i class="fas fa-search"></i>
+                                <i class="fas fa-search ps-3 pe-3 pb-2"></i>
                             </div>
                             <input type="text" placeholder=" Cerca o inizia una nuova chat">
                         </div>
-                        <div class="my_chats-section">
+
+
+                        <div class="my_contacts-section">
                             <ul>
-                                <li>
-                                    <div class="my_chat-box d-flex justify-content-evenly">
-                                        <div class="my_chat-img">
-                                            <p>Img Michele</p>
+                                <li v-for="(contact, index) in contacts" :class="{'active' : index == selectedContact}" @click="selectContact(index)">
+                                    <div class="my_contact-box d-flex">
+                                        <div class="my_contact-img" >
+                                            <img src="img/avatar_1.jpg" alt="img contatto">
                                         </div>
                                         <div class="my_chat-text">
-                                            <h4>Michele</h4>
+                                            <h4>{{ contacts[index].name }}</h4>
                                             <p>Tutto Fatto! ...</p>
+                                        </div>
+                                        <div class="my_chat-date">
+                                            <p>date reference</p>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="col-8">
-                    <div class="my_right-side">
-                        <div class="my_current-chat d-flex p-3 align-items-center justify-content-between">
+                    <div class="my_right-side d-flex flex-column justify-content-between">
+
+                        <div class="my_current-chat d-flex p-3 align-items-center justify-content-between" v-for>
                             <div class="my_current-box d-flex align-items-center">
                                 <div class="my_current-img">
-                                    <span>Immagine corrente</span>
+                                    <img src="img/avatar_1.jpg" alt="img contatto">
                                 </div>
-                                <div class="my_current-info">
-                                    <p>Michele</p>
-                                    <p>ultimo accesso</p>
+                                <div class="my_current-info" >
+                                    <p> {{ contacts[selectedContact].name }}</p>
+                                    <p> ultimo accesso </p>
                                 </div>
                             </div>
                             <div class="my_user-icons">
@@ -93,9 +105,38 @@
                                 <span><i class="fas fa-ellipsis-v"></i></span>
                             </div>
                         </div>
-                        <div class="my_chat-section">
-                            <p>Zona della CHat</p>
-                        </div>
+
+                        <div class="my_chat-bg">
+                            <div class="my_chat-section">
+                                <div class="my_user-column d-flex flex-row-reverse pt-5">
+                                    <ul>
+                                        <li class="d-flex flex-column pe-5">
+                                            <div class="my_user-message-box mb-2">
+                                                <h5>Hai portato a spasso il cane?</h5>
+                                                <p>date/cloak reference</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex flex-column mb-2">
+                                            <div class="my_user-message-box">
+                                                <h5>Ricordati di dargli da mangiare</h5>
+                                                <p>date/cloak reference</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="my_contact-column d-flex">
+                                    <ul>
+                                        <li class="my_message d-flex flex-column ps-5">
+                                            <div class="my_contact-message-box">
+                                                <h5>Tutto fatto</h5>
+                                                <p>date/cloak reference</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+
                         <div class="my_form-section d-flex justify-content-between align-items-center">
                             <p><i class="far fa-smile"></i></p>
                             <input type="text" placeholder=" Scrivi un messaggio">

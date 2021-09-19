@@ -19,9 +19,59 @@ ul {
     background-color: crimson;
 }
 
+
+/* ## LEFT SIDE CLASSES ## */
+
 .my_left-side{
-    background-color: steelblue;
+    background-color: #fffeff;
 }
+
+.my_alerts-section{
+    height: 80px;
+    background-color: #93d9fa;
+}
+
+.my_alert-text{
+    line-height: 5px;
+}
+
+.my_search-section{
+    height: 50px;
+    background-color: #f9f9fa;
+}
+
+.my_search-icon{
+    height: 30px;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+}
+
+.my_search-section input {
+    height: 30px;
+    width: 465px;
+    border: 1px solid #dbdbdb;
+    border-left: none;
+    border-start-end-radius: 3px;
+    border-end-end-radius: 3px;
+    outline: none;
+}
+
+.my_contact-box{
+    border-top: 1px solid #e8eaea;
+}
+
+.my_contacts-section{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.my_contacts-section ul li.active{
+    background-color: #e8eaea;
+}
+
+
+
+/* ## RIGHT SIDE CLASSES ## */  
 
 .my_right-side{
     background-color: sandybrown;
@@ -43,36 +93,6 @@ ul {
     padding-top: 10px;
 }
 
-.my_alerts-section{
-    height: 80px;
-    background-color: #93d9fa;
-}
-
-.my_alert-text{
-    line-height: 5px;
-}
-
-.my_search-section{
-    height: 40px;
-    background-color: #f9f9fa;
-}
-
-.my_search-icon{
-    height: 30px;
-    background-color: white;
-    border: 1px solid #dbdbdb;
-}
-
-.my_search-section input {
-    height: 30px;
-    width: 91%;
-    border: 1px solid #dbdbdb;
-    border-left: none;
-    border-start-end-radius: 3px;
-    border-end-end-radius: 3px;
-    outline: none;
-}
-
 .my_form-section {
     height: 60px;
     background-color: #f2edea;
@@ -86,8 +106,39 @@ ul {
     outline: none;
 }
 
-.my_user-img img{
+.my_chat-bg{
+    background-image: url(../img/mine.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: auto;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.my_right-side,
+.my_left-side{
+    height: 95vh;
+}
+
+.my_user-img img,
+.my_contact-img img,
+.my_current-img img{
     height: 45px;
     border-radius: 50%;
     object-fit: contain;
+}
+
+.my_contact-column,
+.my_user-column {
+
+}
+
+.my_user-message-box{
+    width: 250px;
+    background-color: #d3f9ba;
+}
+
+.my_contact-message-box {
+    width: 250px;
+    background-color: #fffeff;
 }
