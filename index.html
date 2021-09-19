@@ -36,23 +36,23 @@
                                 <div class="my_user-img">
                                     <img src="img/avatar_io.jpg" alt="Immagine user">
                                 </div>
-                                <span> Nome Utente</span>
+                                <span class="fw-bold ps-2"> Nome Utente</span>
                             </div>
                             <div class="my_user-icons">
-                                <span><i class="fas fa-circle-notch"></i></span>
-                                <span><i class="fas fa-comment-alt"></i></span>
-                                <span><i class="fas fa-ellipsis-v"></i></span>
+                                <span><i class="fas fa-circle-notch my_light-grey fs-5 pe-3"></i></span>
+                                <span><i class="fas fa-comment-alt my_light-grey fs-5 pe-3"></i></span>
+                                <span><i class="fas fa-ellipsis-v my_light-grey fs-5"></i></span>
                             </div>
                         </div>
 
 
-                        <div class="my_alerts-section d-flex align-items-center">
-                            <div class="my_alert-icon">
-                                <i class="fas fa-bell-slash"></i>
+                        <div class="my_alerts-section d-flex align-items-center pt-2 pb-2">
+                            <div class="my_alert-icon ms-3">
+                                <i class="fas fa-bell-slash pt-2 fs-4"></i>
                             </div>
-                            <div class="my_alert-text">
-                                <h5> Ricevi notifiche di nuovi messaggi </h5>
-                                <p>Attiva notifiche desktop</p>
+                            <div class="my_alert-text ps-3">
+                                <p class="fs-6"> Ricevi notifiche di nuovi messaggi </p>
+                                <span class="my_grey text-decoration-underline my_reference">Attiva notifiche desktop</span>
                             </div>
                         </div>
 
@@ -69,15 +69,15 @@
                             <ul>
                                 <li v-for="(contact, index) in contacts" :class="{'active' : index == selectedContact}" @click="selectContact(index)">
                                     <div class="my_contact-box d-flex">
-                                        <div class="my_contact-img" >
+                                        <div class="my_contact-img ms-3 mt-3" >
                                             <img src="img/avatar_1.jpg" alt="img contatto">
                                         </div>
-                                        <div class="my_chat-text">
+                                        <div class="my_chat-text ms-3 p-2">
                                             <h4>{{ contacts[index].name }}</h4>
-                                            <p>Tutto Fatto! ...</p>
+                                            <span class="my_reference my_light-grey">Tutto Fatto! ...</span>
                                         </div>
-                                        <div class="my_chat-date">
-                                            <p>date reference</p>
+                                        <div class="my_chat-date ms-auto pe-2 my_light-grey">
+                                            <span class="my_msg-reference my_light-grey">date/cloak reference</span>
                                         </div>
                                     </div>
                                 </li>
@@ -96,13 +96,13 @@
                                 </div>
                                 <div class="my_current-info" >
                                     <p> {{ contacts[selectedContact].name }}</p>
-                                    <p> ultimo accesso </p>
+                                    <span class="my_reference my_grey"> ultimo accesso </span>
                                 </div>
                             </div>
                             <div class="my_user-icons">
-                                <span><i class="fas fa-search"></i></span>
-                                <span><i class="fas fa-paperclip"></i></span>
-                                <span><i class="fas fa-ellipsis-v"></i></span>
+                                <span><i class="fas fa-search my_light-grey fs-5 pe-3"></i></span>
+                                <span><i class="fas fa-paperclip my_light-grey fs-5 pe-3"></i></span>
+                                <span><i class="fas fa-ellipsis-v my_light-grey fs-5"></i></span>
                             </div>
                         </div>
 
@@ -111,15 +111,15 @@
                                 <div class="my_user-column d-flex flex-row-reverse pt-5">
                                     <ul>
                                         <li class="d-flex flex-column pe-5">
-                                            <div class="my_user-message-box mb-2">
-                                                <h5>Hai portato a spasso il cane?</h5>
-                                                <p>date/cloak reference</p>
+                                            <div class="my_user-message-box d-flex flex-column pt-2 ps-3 mb-2">
+                                                <p class="my_msg">Hai portato a spasso il cane?</p>
+                                                <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
                                             </div>
                                         </li>
-                                        <li class="d-flex flex-column mb-2">
-                                            <div class="my_user-message-box">
-                                                <h5>Ricordati di dargli da mangiare</h5>
-                                                <p>date/cloak reference</p>
+                                        <li class="d-flex flex-column">
+                                            <div class="my_user-message-box d-flex flex-column pt-2 ps-3 mb-2">
+                                                <p class="my_msg">Ricordati di dargli da mangiare</p>
+                                                <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -127,9 +127,9 @@
                                 <div class="my_contact-column d-flex">
                                     <ul>
                                         <li class="my_message d-flex flex-column ps-5">
-                                            <div class="my_contact-message-box">
-                                                <h5>Tutto fatto</h5>
-                                                <p>date/cloak reference</p>
+                                            <div class="my_contact-message-box d-flex flex-column pt-2 ps-3 mb-2">
+                                                <p class="my_msg">Tutto fatto!</p>
+                                                <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -137,10 +137,10 @@
                                 </div>
                             </div>
 
-                        <div class="my_form-section d-flex justify-content-between align-items-center">
-                            <p><i class="far fa-smile"></i></p>
+                        <div class="my_form-section d-flex justify-content-evenly align-items-center">
+                            <p><i class="my_grey far fa-smile pt-3 fs-4"></i></p>
                             <input type="text" placeholder=" Scrivi un messaggio">
-                            <p><i class="fas fa-microphone"></i></p>
+                            <p><i class="my_grey fas fa-microphone pt-3 fs-4"></i></p>
                         </div>
                     </div>
                 </div>

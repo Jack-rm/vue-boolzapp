@@ -100,7 +100,7 @@ ul {
 
 .my_form-section input{
     height: 40px;
-    width: 85%;
+    width: 900px;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -128,17 +128,52 @@ ul {
     object-fit: contain;
 }
 
-.my_contact-column,
-.my_user-column {
-
+.my_alert-icon {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: white;
+    text-align:center;
+    color: #93d9fa;
 }
 
 .my_user-message-box{
-    width: 250px;
+    width: 350px;
     background-color: #d3f9ba;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
 }
 
 .my_contact-message-box {
-    width: 250px;
+    width: 350px;
     background-color: #fffeff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+.my_msg{
+    padding: 0;
+    margin: 0;
+    line-height: 15px;
+}
+
+.my_reference {
+    font-size: 0.9em;
+}
+
+.my_msg-reference {
+    font-size: 0.7em;
+}
+
+
+/* ## GENERAL CLASSES ## */
+
+.my_grey{
+    color: #6b7275;
+}
+
+.my_light-grey{
+    color: #adadad;
 }
