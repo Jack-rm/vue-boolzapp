@@ -69,10 +69,10 @@
                             <ul>
                                 <li v-for="(contact, index) in contacts" :class="{'active' : index == selectedContact}" @click="selectContact(index)">
                                     <div class="my_contact-box d-flex">
-                                        <div class="my_contact-img ms-3 mt-3" >
+                                        <div class="my_contact-img ms-3 m-2" >
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="img contatto">
                                         </div>
-                                        <div class="my_chat-text ms-3 p-2">
+                                        <div class="my_chat-text p-2">
                                             <h5>{{ contacts[index].name }}</h5>
                                             <span class="my_reference my_light-grey my_contacts-reference">{{ contacts[index].messages.at(-1).text }} ...</span>
                                         </div>
@@ -107,35 +107,13 @@
                         </div>
 
                         <div class="my_chat-bg">
-                            <div class="my_chat-section">
-                                <div class="my_user-column d-flex flex-row-reverse pt-5">
-                                    <ul>
-                                        <li class="d-flex flex-column pe-5">
-                                            <div class="my_user-message-box d-flex flex-column pt-2 ps-3 mb-2">
-                                                <p class="my_msg">{{ contacts[selectedContact].messages[0].text }}</p>
-                                                <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
-                                            </div>
-                                        </li>
-                                        <li class="d-flex flex-column">
-                                            <div class="my_user-message-box d-flex flex-column pt-2 ps-3 mb-2">
-                                                <p class="my_msg">{{ contacts[selectedContact].messages[1].text }}</p>
-                                                <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="my_contact-column d-flex">
-                                    <ul>
-                                        <li class="my_message d-flex flex-column ps-5">
-                                            <div class="my_contact-message-box d-flex flex-column pt-2 ps-3 mb-2">
-                                                <p class="my_msg">{{ contacts[selectedContact].messages.at(-1).text }}</p>
-                                                <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="my_chat-section p-5">
+                                <div class="d-flex flex-column pt-2 ps-4 mb-2" v-for="(text,index) in contacts[selectedContact].messages" v-bind:class="{'my_user-message-box':(contacts[selectedContact].messages[index].status == 'sent'), 'my_contact-message-box':(contacts[selectedContact].messages[index].status == 'received')}">
+                                    <p class="my_msg">{{ contacts[selectedContact].messages[index].text }}</p>
+                                    <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
                                 </div>
                             </div>
+                        </div>
 
                         <div class="my_form-section d-flex justify-content-evenly align-items-center">
                             <p><i class="my_grey far fa-smile pt-3 fs-4"></i></p>

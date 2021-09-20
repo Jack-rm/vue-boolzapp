@@ -125,4 +125,3 @@ var root = new Vue (
         }
     }
 );
-
