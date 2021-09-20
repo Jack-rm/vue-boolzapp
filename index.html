@@ -117,7 +117,7 @@
 
                         <div class="my_form-section d-flex justify-content-evenly align-items-center">
                             <p><i class="my_grey far fa-smile pt-3 fs-4"></i></p>
-                            <input type="text" placeholder="Scrivi un messaggio" v-model="newTextElement" @keyup.enter="addTextElement">
+                            <input type="text" placeholder="Scrivi un messaggio" v-model="newTextElement" @keyup.enter="addTextElement" @keydown.enter="addAnswer">
                             <p><i class="my_grey fas fa-microphone pt-3 fs-4"></i></p>
                         </div>
                     </div>

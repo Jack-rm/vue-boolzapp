@@ -131,6 +131,7 @@ var root = new Vue (
             ],
             selectedContact : 0,
             newTextElement : "",
+            newTextAnswer : "",
             
         },
 
@@ -144,10 +145,29 @@ var root = new Vue (
 
                 if (this.newTextElement.length > 0){
 
-                    const elementToAdd = 
-                    root.contacts.messages[2].push({text : this.newTextElement});
-                    newTextElement = "";
+                    let newMessage = {
+                        date : '20/09/2021 17:27:00',
+                        text : this.newTextElement,
+                        status : 'sent'
+                    }
+
+                    this.contacts[this.selectedContact].messages.push(newMessage);
+                    this.newTextElement = "";
+                    console.log(this.contacts[this.selectedContact].messages); // 
                 }
+            },
+
+            addAnswer: function(){
+
+                    let newAnswer = {
+                        date : '20/09/2021 17:27:35',
+                        text : 'Ok :)',
+                        status : 'received'
+                    }
+
+                    setTimeout( () => {
+                        this.contacts[this.selectedContact].messages.push(newAnswer);
+                    },1000);             
             },
         }
     }
