@@ -167,6 +167,10 @@ ul {
     font-size: 0.7em;
 }
 
+.my_contacts-reference {
+    font-size: 0.8em;
+}
+
 
 /* ## GENERAL CLASSES ## */
 
@@ -176,4 +180,10 @@ ul {
 
 .my_light-grey{
     color: #adadad;
+}
+
+.my_chat-text{
+    line-height: 0.1em;
+    margin: 0;
+    padding: 0;
 }

@@ -70,11 +70,11 @@
                                 <li v-for="(contact, index) in contacts" :class="{'active' : index == selectedContact}" @click="selectContact(index)">
                                     <div class="my_contact-box d-flex">
                                         <div class="my_contact-img ms-3 mt-3" >
-                                            <img src="img/avatar_1.jpg" alt="img contatto">
+                                            <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="img contatto">
                                         </div>
                                         <div class="my_chat-text ms-3 p-2">
-                                            <h4>{{ contacts[index].name }}</h4>
-                                            <span class="my_reference my_light-grey">Tutto Fatto! ...</span>
+                                            <h5>{{ contacts[index].name }}</h5>
+                                            <span class="my_reference my_light-grey my_contacts-reference">{{ contacts[index].messages.at(-1).text }} ...</span>
                                         </div>
                                         <div class="my_chat-date ms-auto pe-2 my_light-grey">
                                             <span class="my_msg-reference my_light-grey">date/cloak reference</span>
@@ -92,7 +92,7 @@
                         <div class="my_current-chat d-flex p-3 align-items-center justify-content-between" v-for>
                             <div class="my_current-box d-flex align-items-center">
                                 <div class="my_current-img">
-                                    <img src="img/avatar_1.jpg" alt="img contatto">
+                                    <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'" alt="img contatto">
                                 </div>
                                 <div class="my_current-info" >
                                     <p> {{ contacts[selectedContact].name }}</p>
@@ -112,13 +112,13 @@
                                     <ul>
                                         <li class="d-flex flex-column pe-5">
                                             <div class="my_user-message-box d-flex flex-column pt-2 ps-3 mb-2">
-                                                <p class="my_msg">Hai portato a spasso il cane?</p>
+                                                <p class="my_msg">{{ contacts[selectedContact].messages[0].text }}</p>
                                                 <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
                                             </div>
                                         </li>
                                         <li class="d-flex flex-column">
                                             <div class="my_user-message-box d-flex flex-column pt-2 ps-3 mb-2">
-                                                <p class="my_msg">Ricordati di dargli da mangiare</p>
+                                                <p class="my_msg">{{ contacts[selectedContact].messages[1].text }}</p>
                                                 <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
                                             </div>
                                         </li>
@@ -128,7 +128,7 @@
                                     <ul>
                                         <li class="my_message d-flex flex-column ps-5">
                                             <div class="my_contact-message-box d-flex flex-column pt-2 ps-3 mb-2">
-                                                <p class="my_msg">Tutto fatto!</p>
+                                                <p class="my_msg">{{ contacts[selectedContact].messages.at(-1).text }}</p>
                                                 <span class="my_msg-reference my_light-grey ms-auto pe-3">date/cloak reference</span>
                                             </div>
                                         </li>
