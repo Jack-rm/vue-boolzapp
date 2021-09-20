@@ -18,6 +18,21 @@
  * Non spendete tempo a ragionare su funzionalità che non sono state richieste nel milestone corrente;
  * l'obiettivo non è essere veloci, l'obiettivo è ottenere un risultato di qualità, pulito ed efficiente.
  * Si possono trascurare le scrollbar verticali, sia nel pannello dei messaggi, che nella lista dei contatti
+ * 
+ * 
+ * ## Il Milestone 2 include esclusivamente:
+ * 
+ * Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+ * Click sul contatto mostra la conversazione del contatto cliccato
+ * 
+ * ## Il Milestone 3 include esclusivamente:
+ * 
+ * Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+ * Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+ * 
+ * ## Il Milestone 4 include esclusivamente:
+ * 
+ * Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
  *    
 */
 
@@ -114,14 +129,27 @@ var root = new Vue (
                     ],
                 },
             ],
-            selectedContact: 0,
+            selectedContact : 0,
+            newTextElement : "",
+            
         },
 
         methods: {
             
             selectContact : function(elementIndex) {
                 this.selectedContact = elementIndex;
-            }
+            },
+
+            addTextElement: function(){
+
+                if (this.newTextElement.length > 0){
+
+                    const elementToAdd = 
+                    root.contacts.messages[2].push({text : this.newTextElement});
+                    newTextElement = "";
+                }
+            },
         }
     }
 );
+

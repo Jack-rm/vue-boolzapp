@@ -134,8 +134,12 @@ ul {
     border-radius: 50%;
     object-fit: contain;
     background-color: white;
-    text-align:center;
     color: #93d9fa;
+    text-align: center;
+}
+
+.my_alert-icon i{
+    padding-top: 9px;
 }
 
 .my_user-message-box{
@@ -161,18 +165,18 @@ ul {
     padding: 0;
     margin: 0;
     line-height: 15px;
-}
-
-.my_reference {
     font-size: 0.9em;
 }
 
-.my_msg-reference {
-    font-size: 0.7em;
+.my_current-contact{
+    margin: 0;
+    padding-bottom: 12px;
 }
 
-.my_contacts-reference {
-    font-size: 0.8em;
+.my_chat-text{
+    line-height: 0.4em;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -186,8 +190,14 @@ ul {
     color: #adadad;
 }
 
-.my_chat-text{
-    line-height: 0.4em;
-    margin: 0;
-    padding: 0;
+.my_reference {
+    font-size: 0.8em;
+}
+
+.my_msg-reference {
+    font-size: 0.7em;
+}
+
+.my_contacts-reference {
+    font-size: 0.8em;
 }
