@@ -109,6 +109,7 @@
                         <div class="my_chat-bg">
                             <div class="my_chat-section p-5">
                                 <div class="d-flex flex-column pt-2 ps-3 mb-2" v-for="(message,index) in filteredContacts[selectedContact].messages" v-bind:class="{'my_user-message-box':(filteredContacts[selectedContact].messages[index].status == 'sent'), 'my_contact-message-box':(filteredContacts[selectedContact].messages[index].status == 'received')}">
+                                    <i class="fas fa-angle-down ms-auto pe-2 my_arrow-line my_light-grey" @click="deleteTextElement(index)"></i>
                                     <p class="my_msg">{{ message.text }}</p>
                                     <span class="my_msg-reference my_light-grey ms-auto pe-2">{{ message.date }}</span>
                                 </div>

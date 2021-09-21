@@ -145,6 +145,7 @@ var root = new Vue (
             filteredContacts() {
 
                 return this.contacts.filter(contact => {
+                    this.selectedContact = 0;
                     return contact.name.toLowerCase().includes(this.search.toLowerCase());
                 });
             }
@@ -168,7 +169,7 @@ var root = new Vue (
 
                     this.filteredContacts[this.selectedContact].messages.push(newMessage);
                     this.newTextElement = "";
-                    console.log(this.filteredContacts[this.selectedContact].messages); // 
+                    // console.log(this.filteredContacts[this.selectedContact].messages);  
                 }
             },
 
@@ -183,6 +184,10 @@ var root = new Vue (
                     setTimeout( () => {
                         this.filteredContacts[this.selectedContact].messages.push(newAnswer);
                     },2000);             
+            },
+
+            deleteTextElement: function(index){
+                this.filteredContacts[this.selectedContact].messages.splice(index, this.filteredContacts.length);
             },
         },
     }
