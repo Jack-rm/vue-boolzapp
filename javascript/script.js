@@ -33,7 +33,12 @@
  * ## Il Milestone 4 include esclusivamente:
  * 
  * Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
- *    
+ *
+ * ## Il Milestone 5 (opzionale):
+ * 
+ * Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato ed un 'pop up' che richieda conferma dell'azione
+ * Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
+ *     
 */
 
 
@@ -131,8 +136,18 @@ var root = new Vue (
             ],
             selectedContact : 0,
             newTextElement : "",
-            newTextAnswer : "",
+            search: "",
             
+        },
+        
+        computed: {
+
+            filteredContacts() {
+
+                return this.contacts.filter(contact => {
+                    return contact.name.toLowerCase().includes(this.search.toLowerCase());
+                });
+            }
         },
 
         methods: {
@@ -151,9 +166,9 @@ var root = new Vue (
                         status : 'sent'
                     }
 
-                    this.contacts[this.selectedContact].messages.push(newMessage);
+                    this.filteredContacts[this.selectedContact].messages.push(newMessage);
                     this.newTextElement = "";
-                    console.log(this.contacts[this.selectedContact].messages); // 
+                    console.log(this.filteredContacts[this.selectedContact].messages); // 
                 }
             },
 
@@ -166,10 +181,10 @@ var root = new Vue (
                     }
 
                     setTimeout( () => {
-                        this.contacts[this.selectedContact].messages.push(newAnswer);
-                    },1000);             
+                        this.filteredContacts[this.selectedContact].messages.push(newAnswer);
+                    },2000);             
             },
-        }
+        },
     }
 );
 

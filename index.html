@@ -61,23 +61,23 @@
                             <div class="my_search-icon ms-2 ps-2 pe-2">
                                 <i class="fas fa-search ps-3 pe-3 pb-2"></i>
                             </div>
-                            <input type="text" placeholder=" Cerca o inizia una nuova chat">
+                            <input type="text" placeholder=" Cerca o inizia una nuova chat" v-model="search">
                         </div>
 
 
                         <div class="my_contacts-section">
                             <ul>
-                                <li v-for="(contact, index) in contacts" :class="{'active' : index == selectedContact}" @click="selectContact(index)">
+                                <li v-for="(contact, index) in filteredContacts" :class="{'active' : index == selectedContact}" @click="selectContact(index)">
                                     <div class="my_contact-box d-flex">
                                         <div class="my_contact-img ms-3 m-2" >
                                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="img contatto">
                                         </div>
                                         <div class="my_chat-text p-2">
-                                            <h5>{{ contacts[index].name }}</h5>
-                                            <span class="my_reference my_light-grey my_contacts-reference">{{ contacts[index].messages.at(-1).text }} ...</span>
+                                            <h5>{{ filteredContacts[index].name }}</h5>
+                                            <span class="my_reference my_light-grey my_contacts-reference">{{ filteredContacts[index].messages.at(-1).text }} ...</span>
                                         </div>
                                         <div class="my_chat-date ms-auto pe-2 my_light-grey">
-                                            <span class="my_msg-reference my_light-grey">{{ contacts[index].messages.at(-1).date }}</span>
+                                            <span class="my_msg-reference my_light-grey">{{ filteredContacts[index].messages.at(-1).date }}</span>
                                         </div>
                                     </div>
                                 </li>
@@ -92,11 +92,11 @@
                         <div class="my_current-chat d-flex p-3 align-items-center justify-content-between" v-for>
                             <div class="my_current-box d-flex align-items-center">
                                 <div class="my_current-img">
-                                    <img :src="'img/avatar' + contacts[selectedContact].avatar + '.jpg'" alt="img contatto">
+                                    <img :src="'img/avatar' + filteredContacts[selectedContact].avatar + '.jpg'" alt="img contatto">
                                 </div>
                                 <div class="my_current-info d-flex flex-column justify-content-around" >
-                                    <p class="my_current-contact"> {{ contacts[selectedContact].name }}</p>
-                                    <span class="my_reference my_grey pb-2">{{ 'Ultimo accesso oggi alle ' + contacts[selectedContact].messages.at(-1).date }}</span>
+                                    <p class="my_current-contact"> {{ filteredContacts[selectedContact].name }}</p>
+                                    <span class="my_reference my_grey pb-2">{{ 'Ultimo accesso oggi alle ' + filteredContacts[selectedContact].messages.at(-1).date }}</span>
                                 </div>
                             </div>
                             <div class="my_user-icons">
@@ -108,9 +108,9 @@
 
                         <div class="my_chat-bg">
                             <div class="my_chat-section p-5">
-                                <div class="d-flex flex-column pt-2 ps-3 mb-2" v-for="(text,index) in contacts[selectedContact].messages" v-bind:class="{'my_user-message-box':(contacts[selectedContact].messages[index].status == 'sent'), 'my_contact-message-box':(contacts[selectedContact].messages[index].status == 'received')}">
-                                    <p class="my_msg">{{ contacts[selectedContact].messages[index].text }}</p>
-                                    <span class="my_msg-reference my_light-grey ms-auto pe-2">{{ contacts[selectedContact].messages[index].date }}</span>
+                                <div class="d-flex flex-column pt-2 ps-3 mb-2" v-for="(message,index) in filteredContacts[selectedContact].messages" v-bind:class="{'my_user-message-box':(filteredContacts[selectedContact].messages[index].status == 'sent'), 'my_contact-message-box':(filteredContacts[selectedContact].messages[index].status == 'received')}">
+                                    <p class="my_msg">{{ message.text }}</p>
+                                    <span class="my_msg-reference my_light-grey ms-auto pe-2">{{ message.date }}</span>
                                 </div>
                             </div>
                         </div>
