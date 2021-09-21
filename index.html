@@ -74,10 +74,10 @@
                                         </div>
                                         <div class="my_chat-text p-2">
                                             <h5>{{ filteredContacts[index].name }}</h5>
-                                            <span class="my_reference my_light-grey my_contacts-reference">{{ filteredContacts[index].messages.at(-1).text }} ...</span>
+                                            <span v-if="filteredContacts[index].messages.length > 0" class="my_reference my_light-grey my_contacts-reference">{{ filteredContacts[index].messages.at(-1).text }} ...</span>
                                         </div>
                                         <div class="my_chat-date ms-auto pe-2 my_light-grey">
-                                            <span class="my_msg-reference my_light-grey">{{ filteredContacts[index].messages.at(-1).date }}</span>
+                                            <span v-if="filteredContacts[index].messages.length > 0" v-if="filteredContacts[index].messages.length > 0" class="my_msg-reference my_light-grey">{{ filteredContacts[index].messages.at(-1).date }}</span>
                                         </div>
                                     </div>
                                 </li>

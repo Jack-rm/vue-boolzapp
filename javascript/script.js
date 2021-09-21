@@ -187,7 +187,8 @@ var root = new Vue (
             },
 
             deleteTextElement: function(index){
-                this.filteredContacts[this.selectedContact].messages.splice(index, this.filteredContacts.length);
+
+                this.filteredContacts[this.selectedContact].messages.splice(index, 1);
             },
         },
     }
